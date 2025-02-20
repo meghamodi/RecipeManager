@@ -1,0 +1,231 @@
+<html>
+    <head>
+        <title>My Mom's recipes</title>  
+        <script type="module">
+            import { toggleContents } from './openHome.js';
+            import { listRecipes, toggleRecipeContent } from './listRecipes.js';
+            import { cardCreate, toggleFoodContent } from './cardCreate.js';
+            
+            window.listRecipes = listRecipes;
+            window.cardCreate = cardCreate;
+            window.toggleRecipeContent = toggleRecipeContent;
+            window.toggleContents = toggleContents;
+            window.onload = function() {
+                toggleContents('homeText');
+                cardCreate();
+    };
+
+            
+        </script>  
+        <style>
+
+            .container {
+                display: flex;
+                flex-direction: column; /* Stack sections vertically */
+                align-items: center; /* Center-align the content horizontally */
+                padding: 20px;
+            }
+
+            .headers {
+                display: flex;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible grid for headers */
+                gap: 20px;
+                justify-items: center; 
+                cursor: pointer;
+            }
+            
+            .content-grid {
+            /* width: auto;
+            display: flex;
+            grid-template-columns: 1fr; /* Single column layout for content */
+            gap: 20px;
+            justify-items: right; /* Center-align content */
+            /* margin-top: 40px;  */ 
+            display: grid; /* Use grid instead of flex */
+            width: 100%;
+            gap: 20px;
+            justify-items: center;
+        }
+
+            .category {
+                text-align:center;
+                width: 100%;
+            }
+
+           .content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content:center;
+                text-align: center;
+                /* margin-top:20px; */
+               
+                
+            }
+            .recipeGallery {
+                display: grid ;
+                max-width: 2200px;
+                grid-template-columns: repeat(2, minmax(400px, 1fr)); 
+                gap: 20px;
+                padding: 20px;  
+                justify-content: center;
+            }
+
+            /* .recipe-card {
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 15px;
+                width: 100%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease-in-out;
+                font-size: 0.9rem;
+                
+            }
+
+
+            .recipe-card:hover {
+                transform: scale(1.05);
+            } */
+            .recipe-details {
+                padding: 10px;
+                font-size: 1.9rem;
+                color: #555;
+                background-color: #f4f4f4;
+                border-top: 1px solid #ddd;
+            
+            
+            }
+            .nutrition-element{
+                display:none;
+                
+
+            }
+            .qrecipe-card:hover .nutrition-element{
+                display:block;
+                background-color: #e0f7fa;
+                border: 1px solid #b2ebf2;
+                border-radius: 5px;
+                padding: 5px;
+                margin: 5px 0;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1rem;
+                color: #00796b;
+
+            }
+
+            .card-image {
+                width: 100%;
+                height: 180px;
+            } 
+
+            .card-image img { 
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+
+            .qrecipe-card{
+                background: white;
+                /* border: 1px solid #ddd; */
+                /* border-radius: 10px; */
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                /* overflow: hidden; */
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                text-align: center; 
+                display:flex;
+                width:100%;
+                flex-direction: column;
+                align-self: start;
+            }
+
+            .card-detailPop{
+                display: inline-flex;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 20px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+                font-size: 0.8em;
+            }
+            .closePop{
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                font-weight: 400;
+                font-size: 16px;
+                height: 24px;
+                width: 24px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: right;
+            }
+    
+
+          </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="headers">
+                <div class="category">
+                    <h3 id="home" onclick="toggleContents('homeText')">Home</h3> 
+                </div>
+            <div class="category">
+                <h3 id="recipes" onclick="toggleContents('recipeList')" >Recipes</h3>
+   
+            </div>
+            <div class="category">
+                
+                <h3 id="quickrecipes" onclick="toggleContents('qrecipes')" >On the Go Recipes</h3>
+                    
+            </div>
+
+            <div class="category">
+                <h3 id="AboutMe" onclick="toggleContents('AboutTag')">About</h3>
+      
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <!-- Home Content -->
+            <div id="homeText" class="content">
+                <p>This is home</p>
+            </div>
+
+            <!-- Recipes Content -->
+            <div id="recipeList" class="content">
+                
+                    <div class="recipe-card" onclick="listRecipes()">
+                        <strong>Favorites</strong>
+                    </div>
+               
+            </div>
+
+            <!-- Quick Recipes Content -->
+            <div id="qrecipes" class="content">
+               
+                <div class="recipeGallery">
+                   
+            </div>
+
+            <!-- About Content -->
+            <div id="AboutTag" class="content">
+                <p>This is the "About" section where you can add information about yourself or your website.</p>
+            </div>
+            </div>
+
+        </div>
+           
+    <!-- <script type="module" src="openHome.js"></script> -->
+    
+    
+</body>
+
+</html>
