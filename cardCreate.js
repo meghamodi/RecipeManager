@@ -8,9 +8,15 @@ export function cardCreate(){
         const cardRec = document.createElement('div')
         cardRec.classList.add('qrecipe-card')
 
-        const cardTitle = document.createElement('h4')
+        const cardTitle = document.createElement('div')
+        cardTitle.classList.add('card-title')
         cardTitle.textContent = name
         cardTitle.style.cursor = "pointer";
+
+        const cardRecipeButton = document.createElement('div')
+        cardRecipeButton.classList.add('card-recipe')
+        cardRecipeButton.textContent ='Click for Recipe'
+
 
         const nutritionTable = [
             { label: 'Protein', value: protein },
@@ -48,6 +54,7 @@ export function cardCreate(){
         closeButton.style.cursor = "pointer";
       
         closeButton.onclick= ()=> cardDetail.style.display = 'none';
+        cardTitle.appendChild(cardRecipeButton)
 
         cardDetail.appendChild(closeButton)
         
@@ -62,7 +69,7 @@ export function cardCreate(){
 
         nutritionElements.forEach(element => cardRec.appendChild(element))
 
-        cardTitle.onclick = () => cardDetail.style.display = 'block';
+        cardRecipeButton.onclick = () => cardDetail.style.display = 'block';
         RecipesBoard.appendChild(cardRec)
 
     }
