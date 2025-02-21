@@ -8,7 +8,7 @@ export function toggleContents(contentId){
     const contentToShow = document.getElementById(contentId);
     if (contentToShow){
         contentToShow.style.display= 'block'
-        
+
 
         if (contentId === 'qrecipes'){
             cardCreate();

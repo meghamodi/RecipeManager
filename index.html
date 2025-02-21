@@ -5,11 +5,13 @@
             import { toggleContents } from './openHome.js';
             import { listRecipes, toggleRecipeContent } from './listRecipes.js';
             import { cardCreate, toggleFoodContent } from './cardCreate.js';
+            import { searchRecipe } from './searchRecipe.js';
             
             window.listRecipes = listRecipes;
             window.cardCreate = cardCreate;
             window.toggleRecipeContent = toggleRecipeContent;
             window.toggleContents = toggleContents;
+            window.searchRecipe = searchRecipe;
             window.onload = function() {
                 toggleContents('homeText');
                 cardCreate();
@@ -206,9 +208,6 @@
         </div>
 
         <div class="content-grid">
-            <div>
-                <input type="text" placeholder="Search recipes..." id="search-box"></input>
-            </div>
             <!-- Home Content -->
             <div id="homeText" class="content">
                 <p>This is home</p>
@@ -225,8 +224,10 @@
 
             <!-- Quick Recipes Content -->
             <div id="qrecipes" class="content">
-               
-                <div class="recipeGallery">
+                <div>
+                    <input type="text" onkeyup="searchRecipe()"  placeholder="Search recipes..." id="search-box"></input>
+                </div>
+                <div class="recipeGallery"></div>
                    
             </div>
 
