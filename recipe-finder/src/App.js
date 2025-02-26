@@ -1,10 +1,20 @@
 import './App.css';
-import { toggleContents } from './openHome.js';
-import { listRecipes, toggleRecipeContent } from './listRecipes.js';
-import { cardCreate, toggleFoodContent } from './cardCreate.js';
-import { searchRecipe } from './searchRecipe.js';
-
+import { toggleContents } from './utils/openHome.js';
+// import { listRecipes, toggleRecipeContent } from './listRecipes.js';
+import { cardCreate, toggleFoodContent } from './utils/cardCreate.js';
+import { searchRecipe } from './utils/searchRecipe.js';
+import { useState,useEffect } from 'react';
 function App() {
+  useEffect(()=>{
+    window.cardCreate = cardCreate;
+    window.searchRecipe = searchRecipe;
+    window.toggleFoodContent = toggleFoodContent;
+    window.onload = function() {
+      toggleContents('homeText');
+      cardCreate();
+    }
+  })
+
 
   return (
     <div className="App">
