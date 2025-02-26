@@ -1,71 +1,64 @@
 import './App.css';
-import { toggleContents } from './utils/openHome.js';
+import { openContent } from './utils/openContent.js';
 // import { listRecipes, toggleRecipeContent } from './listRecipes.js';
-import { cardCreate, toggleFoodContent } from './utils/cardCreate.js';
-import { searchRecipe } from './utils/searchRecipe.js';
+import { recipeCard, toggleFoodContent } from './RecipeCard/recipeCard.jsx';
+import searcheRecipe from './utils/searchRecipe.js';
 import { useState,useEffect } from 'react';
 function App() {
   useEffect(()=>{
-    window.cardCreate = cardCreate;
-    window.searchRecipe = searchRecipe;
+    window.recipeCard = recipeCard;
+    window.searcheRecipe = searcheRecipe;
+    window.openContent = openContent;
     window.toggleFoodContent = toggleFoodContent;
     window.onload = function() {
-      toggleContents('homeText');
-      cardCreate();
+      openContent('homeText');
+      recipeCard();
     }
-  })
+  },[])
 
 
   return (
     <div className="App">
-        <div class="container">
-            <div class="headers">
-                <div class="category">
-                    <h3 id="home" onclick="toggleContents('homeText')">Home</h3> 
+        <div className="container">
+            <div className="headers">
+                <div className="category">
+                    <h3 id="home" onClick={() =>openContent('homeText')}>Home</h3> 
                 </div>
-            <div class="category">
-                <h3 id="recipes" onclick="toggleContents('recipeList')" >Recipes</h3>
+            {/* <div class="category">
+                <h3 id="recipes" onclick="openContent('recipeList')" >Recipes</h3>
    
-            </div>
-            <div class="category">
+            </div> */}
+            <div className="category">
                 
-                <h3 id="quickrecipes" onclick="toggleContents('qrecipes')" >On the Go Recipes</h3>
+                <h3 id="quickrecipes" onClick={()=> openContent('qrecipes')} >On the Go Recipes</h3>
                     
             </div>
 
-            <div class="category">
-                <h3 id="AboutMe" onclick="toggleContents('AboutTag')">About</h3>
+            <div className="category">
+                <h3 id="AboutMe" onClick={()=> openContent('AboutTag')}>About</h3>
       
             </div>
             
         </div>
 
-        <div class="content-grid">
+        <div className="content-grid">
             {/* <!-- Home Content --> */}
-            <div id="homeText" class="content">
+            <div id="homeText" className="content">
                 <p>This is home</p>
             </div>
 
-            {/* <!-- Recipes Content --> */}
-            <div id="recipeList" class="content">
-                
-                    <div class="recipe-card" onclick="listRecipes()">
-                        <strong>Favorites</strong>
-                    </div>
-               
-            </div>
 
             {/* <!-- Quick Recipes Content --> */}
-            <div id="qrecipes" class="content">
+            <div id="qrecipes" className="content">
                 <div>
-                    <input type="text" onkeyup="searchRecipe()"  placeholder="Search recipes..." id="search-box"></input>
+                    <input type="text" onKeyUp={searcheRecipe}  placeholder="Search recipes..." id="search-box"></input>
                 </div>
-                <div class="recipeGallery"></div>
+                <div className="recipeGallery"></div>
                    
             </div>
 
             {/* <!-- About Content --> */}
-            <div id="AboutTag" class="content">
+            <div id="AboutTag" className="content">
                 <p>This is the "About" section where you can add information about yourself or your website.</p>
             </div>
             </div>

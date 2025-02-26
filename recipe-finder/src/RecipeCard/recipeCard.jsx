@@ -1,6 +1,6 @@
-import recipesData from './recipesData.js';
+import recipesData from '../data/recipesData.js';
 
-export function cardCreate(){
+export function recipeCard(){
     const RecipesBoard = document.querySelector(".recipeGallery")
     RecipesBoard.innerHTML='';
     for (const [name,details] of Object.entries(recipesData)){

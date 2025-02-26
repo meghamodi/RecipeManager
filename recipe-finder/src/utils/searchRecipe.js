@@ -1,4 +1,5 @@
-export function searchRecipe(){
+// utility function for searching the data/recipe
+export default function searchRecipe(){
     const searchBar = document.getElementById('search-box');
     const searchValue = searchBar.value.toLowerCase();
     let searchVals = document.getElementsByClassName('card-title')

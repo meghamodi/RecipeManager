@@ -1,6 +1,6 @@
-import {cardCreate } from './cardCreate.js';
+import {recipeCard } from '../RecipeCard/recipeCard.jsx';
 
-export function toggleContents(contentId){
+export function openContent(contentId){
     const displayContent = document.querySelectorAll('.content');
     displayContent.forEach(content =>{
         content.style.display= 'none'
@@ -11,7 +11,7 @@ export function toggleContents(contentId){
 
 
         if (contentId === 'qrecipes'){
-            cardCreate();
+            recipeCard();
         }
     }
     
