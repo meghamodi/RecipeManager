@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+.container {
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center-align the content horizontally */
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headers {
+  display: flex;
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); Flexible grid for headers */
+  gap: 20px;
+  justify-items: center; 
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content-grid {
+gap: 20px;
+justify-items: right; /* Center-align content */
+display: grid; /* Use grid instead of flex */
+width: 100%;
+gap: 20px;
+justify-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.category {
+  text-align:center;
+  width: 100%;
+}
+.recipeGallery {
+  display: grid ;
+  max-width: 2200px;
+  grid-template-columns: repeat(2, minmax(400px, 1fr)); 
+  gap: 20px;
+  padding: 20px;  
+  justify-content: center;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  justify-content:center;
+  text-align: center;
+ 
+  
 }

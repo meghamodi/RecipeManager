@@ -1,19 +1,14 @@
 // utility function for searching the data/recipe
-export default function searchRecipe(){
-    const searchBar = document.getElementById('search-box');
-    const searchValue = searchBar.value.toLowerCase();
-    let searchVals = document.getElementsByClassName('card-title')
+import {useState} from 'react';
+import {recipesData} from '../data/recipesData.js';
+export function SearchRecipe(){
+    const [searchvalue,setSearchValue] = useState('search recipe');
 
-    for (let i=0;i< searchVals.length;i++){
-        const recipeTitle = searchVals[i].textContent.toLowerCase()
-        if (!recipeTitle.includes(searchValue)) {
-            searchVals[i].parentElement.style.display = "none";
-        }
-        else {
-            searchVals[i].parentElement.style.display = "flex";
-        }
-
-    }
-
-
-}
+return (
+    <>
+    <div className="searchBar">
+        <input value={searchvalue} onChange={e=>{setSearchValue(e.target.value)}}>
+        </input>
+    </div>
+    </>
+)}

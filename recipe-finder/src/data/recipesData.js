@@ -1,6 +1,6 @@
 const recipesData = {
     "aloo sabji": {
-        image_url: '../assets/aloo_sabji.jpeg',
+        image_url: '/assets/aloo_sabji.jpeg',
         recipe: `1. Heat oil in a pan and add cumin seeds.
                 2. Sauté onions until golden brown, then add ginger-garlic paste and cook for a minute.
                 3. Add tomatoes, green chili, and spices. Cook until tomatoes soften.
@@ -14,7 +14,7 @@ const recipesData = {
         fiber: "4g"
     },
     "dal": {
-        image_url: '../assets/dal.jpeg',
+        image_url: '/assets/dal.jpeg',
         recipe: "Dal recipe details here...",
         protein: "7g",
         carbs: "35g",
@@ -23,7 +23,7 @@ const recipesData = {
         fiber: "6g"
     },
     "raita": {
-        image_url: '../assets/raita.jpeg',
+        image_url: '/assets/raita.jpeg',
         recipe: "Raita recipe details here...",
         protein: "2g",
         carbs: "8g",
@@ -41,7 +41,7 @@ const recipesData = {
         fiber: "2g"
     },
     "dosa": {
-        image_url: '../assets/dosa.jpeg',
+        image_url: '/assets/dosa.jpeg',
         recipe: "Raita recipe details here...",
         protein: "2g",
         carbs: "8g",
@@ -50,7 +50,7 @@ const recipesData = {
         fiber: "2g"
     },
     "tofu curry": {
-        image_url: '../assets/tofu_curry.jpeg',
+        image_url: '/assets/tofu_curry.jpeg',
         recipe: "Raita recipe details here...",
         protein: "2g",
         carbs: "8g",

@@ -1,13 +1,13 @@
 import './App.css';
 import { openContent } from './utils/openContent.js';
-// import { listRecipes, toggleRecipeContent } from './listRecipes.js';
 import { recipeCard, toggleFoodContent } from './RecipeCard/recipeCard.jsx';
-import searcheRecipe from './utils/searchRecipe.js';
+import {SearchRecipe} from './utils/searchRecipe.js';
 import { useState,useEffect } from 'react';
+
 function App() {
   useEffect(()=>{
     window.recipeCard = recipeCard;
-    window.searcheRecipe = searcheRecipe;
+    window.searchRecipe = SearchRecipe;
     window.openContent = openContent;
     window.toggleFoodContent = toggleFoodContent;
     window.onload = function() {
@@ -24,10 +24,7 @@ function App() {
                 <div className="category">
                     <h3 id="home" onClick={() =>openContent('homeText')}>Home</h3> 
                 </div>
-            {/* <div class="category">
-                <h3 id="recipes" onclick="openContent('recipeList')" >Recipes</h3>
-   
-            </div> */}
+            
             <div className="category">
                 
                 <h3 id="quickrecipes" onClick={()=> openContent('qrecipes')} >On the Go Recipes</h3>
@@ -51,7 +48,7 @@ function App() {
             {/* <!-- Quick Recipes Content --> */}
             <div id="qrecipes" className="content">
                 <div>
-                    <input type="text" onKeyUp={searcheRecipe}  placeholder="Search recipes..." id="search-box"></input>
+                    <input type="text" onKeyUp={SearchRecipe()}  placeholder="Search recipes..." id="search-box"></input>
                 </div>
                 <div className="recipeGallery"></div>
                    
