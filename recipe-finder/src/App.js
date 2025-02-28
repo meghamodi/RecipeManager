@@ -48,7 +48,7 @@ function App() {
             {/* <!-- Quick Recipes Content --> */}
             <div id="qrecipes" className="content">
                 <div>
-                    <input type="text" onKeyUp={SearchRecipe()}  placeholder="Search recipes..." id="search-box"></input>
+                    <SearchRecipe/>
                 </div>
                 <div className="recipeGallery"></div>
                    
