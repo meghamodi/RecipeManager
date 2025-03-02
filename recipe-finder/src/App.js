@@ -1,20 +1,29 @@
 import './App.css';
-import { openContent } from './utils/openContent.js';
-import { recipeCard, toggleFoodContent } from './RecipeCard/recipeCard.jsx';
-import {SearchRecipe} from './utils/searchRecipe.js';
-import { useState,useEffect } from 'react';
+import {SearchRecipe} from './RecipeCard/searchRecipe.js';
+import {useState} from 'react';
 
 function App() {
-  useEffect(()=>{
-    window.recipeCard = recipeCard;
-    window.searchRecipe = SearchRecipe;
-    window.openContent = openContent;
-    window.toggleFoodContent = toggleFoodContent;
-    window.onload = function() {
-      openContent('homeText');
-      recipeCard();
+    const [isActive, setIsActive] = useState('homeText')
+//   useEffect(()=>{
+//     // window.recipeCard = recipeCard;
+//     // window.SearchRecipe = SearchRecipe;
+//     // window.OpenContent = OpenContent;
+//     // window.toggleFoodContent = toggleFoodContent;
+//     // window.onload = function() {
+//     //   OpenContent('homeText');
+//     // //   recipeCard();
+//     }
+//   },[])
+  const handleContent = (contentId) =>{
+    
+        // setIsActive(contentId)
+        
+            setIsActive(contentId)
+        
+   
+
     }
-  },[])
+
 
 
   return (
@@ -22,46 +31,52 @@ function App() {
         <div className="container">
             <div className="headers">
                 <div className="category">
-                    <h3 id="home" onClick={() =>openContent('homeText')}>Home</h3> 
+                    <h3 id="home" onClick={() =>handleContent('homeText')}>Home</h3> 
                 </div>
             
             <div className="category">
                 
-                <h3 id="quickrecipes" onClick={()=> openContent('qrecipes')} >On the Go Recipes</h3>
+                <h3 id="quickrecipes" onClick={()=> handleContent('qrecipes')} >On the Go Recipes</h3>
                     
             </div>
 
             <div className="category">
-                <h3 id="AboutMe" onClick={()=> openContent('AboutTag')}>About</h3>
+                <h3 id="AboutMe" onClick={()=> handleContent('AboutTag')}>About</h3>
       
             </div>
             
         </div>
+        </div>
 
         <div className="content-grid">
             {/* <!-- Home Content --> */}
+            {isActive === 'homeText' && (
             <div id="homeText" className="content">
-                <p>This is home</p>
-            </div>
+                <p>This is home</p> 
+            </div> )}
 
 
             {/* <!-- Quick Recipes Content --> */}
+            {/* It only executes the second part if the first part is true.
+ */}
+            {isActive === 'qrecipes' && (
             <div id="qrecipes" className="content">
                 <div>
                     <SearchRecipe/>
                 </div>
-                <div className="recipeGallery"></div>
-                   
             </div>
+            )}
 
             {/* <!-- About Content --> */}
+            {isActive === 'AboutTag' && (
             <div id="AboutTag" className="content">
                 <p>This is the "About" section where you can add information about yourself or your website.</p>
             </div>
+            )}
             </div>
       
     </div>
-    </div>
+    
   );
 }
 

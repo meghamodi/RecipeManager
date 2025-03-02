@@ -26,14 +26,7 @@ justify-items: center;
   text-align:center;
   width: 100%;
 }
-.recipeGallery {
-  display: grid ;
-  max-width: 2200px;
-  grid-template-columns: repeat(2, minmax(400px, 1fr)); 
-  gap: 20px;
-  padding: 20px;  
-  justify-content: center;
-}
+
 
 .content {
   display: flex;
