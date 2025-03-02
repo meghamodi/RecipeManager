@@ -4,16 +4,7 @@ import {useState} from 'react';
 
 function App() {
     const [isActive, setIsActive] = useState('homeText')
-//   useEffect(()=>{
-//     // window.recipeCard = recipeCard;
-//     // window.SearchRecipe = SearchRecipe;
-//     // window.OpenContent = OpenContent;
-//     // window.toggleFoodContent = toggleFoodContent;
-//     // window.onload = function() {
-//     //   OpenContent('homeText');
-//     // //   recipeCard();
-//     }
-//   },[])
+
   const handleContent = (contentId) =>{
     
         // setIsActive(contentId)
