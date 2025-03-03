@@ -6,16 +6,9 @@ function App() {
     const [isActive, setIsActive] = useState('homeText')
 
   const handleContent = (contentId) =>{
-    
-        // setIsActive(contentId)
-        
-            setIsActive(contentId)
-        
-   
-
+            
+            setIsActive(contentId)   
     }
-
-
 
   return (
     <div className="App">
