@@ -1,7 +1,7 @@
 .recipeGallery {
     display: grid ;
     max-width: 2200px;
-    grid-template-columns: repeat(2, minmax(400px, 1fr)); 
+    grid-template-columns: repeat(2, minmax(200px, 1fr)); 
     gap: 20px;
     padding: 20px;  
     justify-content: center;
@@ -13,6 +13,18 @@
     border-radius: 10px;
     padding: 15px;
     text-align: center;
+  }
+
+  .recipeBtn{
+    justify-content: center;
+  }
+  .recipe-content{
+    display: grid ;
+    max-width: 2200px;
+    grid-template-columns: repeat(2, minmax(400px, 1fr)); 
+    gap: 20px;
+    padding: 20px;  
+    justify-content: center;
   }
 
   .recipe-card:hover .nutrition-element{
@@ -40,7 +52,10 @@
     object-fit: cover;
 }
 
-
+.searchBar {
+    font-size: 1.2em;
+    font: bold;
+}
 .card-title {
     font-size: 1.2em;
     font: bold;

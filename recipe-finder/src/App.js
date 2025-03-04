@@ -6,7 +6,6 @@ function App() {
     const [isActive, setIsActive] = useState('homeText')
 
   const handleContent = (contentId) =>{
-            
             setIsActive(contentId)   
     }
 
@@ -15,17 +14,22 @@ function App() {
         <div className="container">
             <div className="headers">
                 <div className="category">
-                    <h3 id="home" onClick={() =>handleContent('homeText')}>Home</h3> 
+                    <h3  onClick={() =>handleContent('homeText')}>Home</h3> 
                 </div>
             
             <div className="category">
                 
-                <h3 id="quickrecipes" onClick={()=> handleContent('qrecipes')} >On the Go Recipes</h3>
+                <h3 onClick={()=> handleContent('quickRecipes')} >On the Go Recipes</h3>
                     
             </div>
 
             <div className="category">
-                <h3 id="AboutMe" onClick={()=> handleContent('AboutTag')}>About</h3>
+                <h3  onClick={()=> handleContent('glowRecipes')}>GlowRecipes</h3>
+      
+            </div>
+
+            <div className="category">
+                <h3 onClick={()=> handleContent('AboutMe')}>About</h3>
       
             </div>
             
@@ -35,7 +39,7 @@ function App() {
         <div className="content-grid">
             {/* <!-- Home Content --> */}
             {isActive === 'homeText' && (
-            <div id="homeText" className="content">
+            <div  className="content">
                 <p>This is home</p> 
             </div> )}
 
@@ -43,17 +47,28 @@ function App() {
             {/* <!-- Quick Recipes Content --> */}
             {/* It only executes the second part if the first part is true.
  */}
-            {isActive === 'qrecipes' && (
-            <div id="qrecipes" className="content">
+            {isActive === 'quickRecipes' && (
+            <div className="content">
                 <div>
                     <SearchRecipe/>
+                    
+                   
+                </div>
+            </div>
+            )}
+
+            {/* <!-- Glow Content --> */}
+            {isActive === 'glowRecipes' && (
+            <div className="content">
+                <div>
+                    <p>Glow recipes coming soon</p>
                 </div>
             </div>
             )}
 
             {/* <!-- About Content --> */}
-            {isActive === 'AboutTag' && (
-            <div id="AboutTag" className="content">
+            {isActive === 'AboutMe' && (
+            <div className="content">
                 <p>This is the "About" section where you can add information about yourself or your website.</p>
             </div>
             )}
