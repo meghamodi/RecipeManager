@@ -1,5 +1,6 @@
 import './App.css';
-import {SearchRecipe} from './RecipeCard/searchRecipe.js';
+import { SearchRecipe } from './RecipeCard/searchRecipe.js';
+import RandomRecipes from './RandomRecipes.js'
 import {useState} from 'react';
 
 function App() {
@@ -32,6 +33,12 @@ function App() {
                 <h3 onClick={()=> handleContent('AboutMe')}>About</h3>
       
             </div>
+
+            <div className="category">
+                <h3 onClick={()=> handleContent('RandomRecipe')}>Random Recipe</h3>
+      
+            </div>
+
             
         </div>
         </div>
@@ -72,8 +79,16 @@ function App() {
                 <p>This is the "About" section where you can add information about yourself or your website.</p>
             </div>
             )}
+
+
             </div>
-      
+            {/* <!-- About Content --> */}
+            {isActive === 'RandomRecipe' && (
+            <div className="content">
+                <RandomRecipes/>
+            </div>
+            )}
+
     </div>
     
   );
