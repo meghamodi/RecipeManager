@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import './RandomRecipe.scss';
 export default function RandomRecipes(){
     const [recipes,setRecipes] = useState([])
 
@@ -11,8 +12,9 @@ export default function RandomRecipes(){
             return;
         }
         const resData  = await rData.json()
+        const randomRecipe = resData[Math.floor(Math.random() * resData.length)]
             
-        setRecipes(resData)
+        setRecipes([randomRecipe])
        
         console.log(`Recipes: ${resData}`)
         }catch(error){
@@ -24,12 +26,18 @@ export default function RandomRecipes(){
     return (
         <div>
             <button onClick={showOneRecipe}>Click for random recipes</button>
-            <ul>
+            <div className="recipeCard">
             {recipes.map((recipe,index)=>(
-                <li index={index}>{`${recipe.title}, ${recipe.ingredients}`}</li>
+                <div key={index} className="recipeItem">
+                <div className="recipeName">{recipe.title}</div>
+                    <p>{recipe.ingredients}</p>
+                    <p>{recipe.instructions}</p>
+                </div>
             )
+           
         )}
-        </ul>
+         </div>
+     
         
 
         </div>

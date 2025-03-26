@@ -1,6 +1,6 @@
 import './App.css';
 import { SearchRecipe } from './RecipeCard/searchRecipe.js';
-import RandomRecipes from './RandomRecipes.js'
+import RandomRecipes from './RandomRecipe/RandomRecipes.js'
 import {useState} from 'react';
 
 function App() {
@@ -23,19 +23,20 @@ function App() {
                 <h3 onClick={()=> handleContent('quickRecipes')} >On the Go Recipes</h3>
                     
             </div>
-
+{/* 
             <div className="category">
                 <h3  onClick={()=> handleContent('glowRecipes')}>GlowRecipes</h3>
       
-            </div>
+            </div> */}
 
-            <div className="category">
-                <h3 onClick={()=> handleContent('AboutMe')}>About</h3>
-      
-            </div>
+            
 
             <div className="category">
                 <h3 onClick={()=> handleContent('RandomRecipe')}>Random Recipe</h3>
+      
+            </div>
+            <div className="category">
+                <h3 onClick={()=> handleContent('AboutMe')}>About</h3>
       
             </div>
 
@@ -65,11 +66,19 @@ function App() {
             )}
 
             {/* <!-- Glow Content --> */}
-            {isActive === 'glowRecipes' && (
+            {/* {isActive === 'glowRecipes' && (
             <div className="content">
                 <div>
                     <p>Glow recipes coming soon</p>
                 </div>
+            </div>
+            )} */}
+
+            </div>
+            {/* <!-- Random Content --> */}
+            {isActive === 'RandomRecipe' && (
+            <div className="content">
+                <RandomRecipes/>
             </div>
             )}
 
@@ -77,15 +86,6 @@ function App() {
             {isActive === 'AboutMe' && (
             <div className="content">
                 <p>This is the "About" section where you can add information about yourself or your website.</p>
-            </div>
-            )}
-
-
-            </div>
-            {/* <!-- Random Content --> */}
-            {isActive === 'RandomRecipe' && (
-            <div className="content">
-                <RandomRecipes/>
             </div>
             )}
 

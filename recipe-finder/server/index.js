@@ -10,7 +10,8 @@ app.use(cors())
 dotenv.config();
 app.get('/recipes',async(req,res)=>{
     // ask chatgpt to provide any recipe name and search that in api
-    const recipeName='pizza'
+    const recipeList =['pizza','pasta','soup','sandwich','salad','sushi']
+    const recipeName=recipeList[Math.floor(Math.random()*recipeList.length)]
     const url = `https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=${recipeName}`;
     const options = {
         method: 'GET',
