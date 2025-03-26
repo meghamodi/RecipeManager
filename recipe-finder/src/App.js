@@ -82,7 +82,7 @@ function App() {
 
 
             </div>
-            {/* <!-- About Content --> */}
+            {/* <!-- Random Content --> */}
             {isActive === 'RandomRecipe' && (
             <div className="content">
                 <RandomRecipes/>
