@@ -23,13 +23,7 @@ function App() {
                 <h3 onClick={()=> handleContent('quickRecipes')} >On the Go Recipes</h3>
                     
             </div>
-{/* 
-            <div className="category">
-                <h3  onClick={()=> handleContent('glowRecipes')}>GlowRecipes</h3>
-      
-            </div> */}
 
-            
 
             <div className="category">
                 <h3 onClick={()=> handleContent('RandomRecipe')}>Random Recipe</h3>

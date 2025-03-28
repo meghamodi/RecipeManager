@@ -1,22 +1,36 @@
 import {useState} from 'react';
 import './RandomRecipe.scss';
 export default function RandomRecipes(){
-    const [recipes,setRecipes] = useState([])
+    const [recipes,setRecipes] = useState(null)
 
     async function showOneRecipe(){
+        const query =`
+        query {
+        randomRecipe{
+        title,
+        ingredients,
+        instructions
+        }
+        }`;
         try {
-        const rData = await fetch('http://localhost:4000/recipes')
+        const rData = await fetch('http://localhost:4000/graphql',{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json',
+
+        },
+        body:JSON.stringify({query})
+    })
         
         if (!rData.ok) {
             console.log("Server failing")
             return;
         }
         const resData  = await rData.json()
-        const randomRecipe = resData[Math.floor(Math.random() * resData.length)]
-            
-        setRecipes([randomRecipe])
+        const randomRecipe = resData.data.randomRecipe;
+
+        setRecipes(randomRecipe)
        
-        console.log(`Recipes: ${resData}`)
         }catch(error){
             console.log("Error fetching")
             
@@ -27,15 +41,15 @@ export default function RandomRecipes(){
         <div>
             <button onClick={showOneRecipe}>Click for random recipes</button>
             <div className="recipeCard">
-            {recipes.map((recipe,index)=>(
-                <div key={index} className="recipeItem">
-                <div className="recipeName">{recipe.title}</div>
-                    <p>{recipe.ingredients}</p>
-                    <p>{recipe.instructions}</p>
+            {recipes && (
+                <div className="recipeItem">
+                <div className="recipeName">{recipes.title}</div>
+                    <p>Ingredients:{recipes.ingredients}</p>
+                    <p>Instructions: {recipes.instructions}</p>
                 </div>
             )
            
-        )}
+        }
          </div>
      
         
