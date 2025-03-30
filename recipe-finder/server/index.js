@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(cors())
 dotenv.config();
 
-
+// schema for the recipe
 const typeDefs = gql`
 type Recipe{
 title:String
@@ -20,9 +20,7 @@ instructions:String
 }
 type Query {
 randomRecipe: Recipe
-
 }
-
 `;
 
 // app.get('/recipes',async(req,res)=>{
