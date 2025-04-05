@@ -1,10 +1,10 @@
 import './App.css';
-import { SearchRecipe } from './RecipeCard/searchRecipe.js';
-import RandomRecipes from './RandomRecipe/RandomRecipes.js'
 import {useState} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
-    const [isActive, setIsActive] = useState('homeText')
+    const [isActive, setIsActive] = useState('home')
 
   const handleContent = (contentId) =>{
             setIsActive(contentId)   
@@ -14,74 +14,73 @@ function App() {
     <div className="App">
         <div className="container">
             <div className="headers">
+            <div className="website-title" onClick={()=> handleContent('home')}>
+                Pinch of yum
+            </div>
+            <div className="nav-menu">
                 <div className="category">
-                    <h3  onClick={() =>handleContent('homeText')}>Home</h3> 
+                    <h3  onClick={() =>handleContent('home')}>HOME</h3> 
                 </div>
-            
-            <div className="category">
-                
-                <h3 onClick={()=> handleContent('quickRecipes')} >On the Go Recipes</h3>
-                    
-            </div>
+        
 
-
-            <div className="category">
-                <h3 onClick={()=> handleContent('RandomRecipe')}>Random Recipe</h3>
-      
-            </div>
-            <div className="category">
-                <h3 onClick={()=> handleContent('AboutMe')}>About</h3>
-      
-            </div>
-
-            
+                <div className="category">
+                    <h3 onClick={()=> handleContent('about')}>ABOUT</h3>
+        
+                </div>
+                <div className="category">
+                    <h3 onClick={()=> handleContent('recipes')}>RECIPES</h3>
+        
+                </div>
+                <div className="category">
+                    <h3 onClick={()=> handleContent('startHere')}>START HERE</h3>
+        
+                </div>
+                <div className="category">
+                    <h3>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </h3>
+                </div>
         </div>
         </div>
+        </div>
+
+        
 
         <div className="content-grid">
+            
             {/* <!-- Home Content --> */}
-            {isActive === 'homeText' && (
-            <div  className="content">
-                <p>This is home</p> 
-            </div> )}
+            {isActive === 'home' && (
+            <div className="thin-section">
+            <p>Simple recipes made for <span className="italic-text">real, actual, everyday life.</span> </p>
+        </div> )}
 
-
-            {/* <!-- Quick Recipes Content --> */}
-            {/* It only executes the second part if the first part is true.
- */}
-            {isActive === 'quickRecipes' && (
+            {isActive === 'recipes' && (
             <div className="content">
                 <div>
-                    <SearchRecipe/>
+                    <p>Something goes here</p>
                     
                    
                 </div>
             </div>
             )}
 
-            {/* <!-- Glow Content --> */}
-            {/* {isActive === 'glowRecipes' && (
-            <div className="content">
-                <div>
-                    <p>Glow recipes coming soon</p>
-                </div>
-            </div>
-            )} */}
-
-            </div>
-            {/* <!-- Random Content --> */}
-            {isActive === 'RandomRecipe' && (
-            <div className="content">
-                <RandomRecipes/>
-            </div>
-            )}
 
             {/* <!-- About Content --> */}
-            {isActive === 'AboutMe' && (
+            {isActive === 'about' && (
             <div className="content">
                 <p>This is the "About" section where you can add information about yourself or your website.</p>
             </div>
             )}
+            {isActive === 'startHere' && (
+            <div className="content">
+                <div>
+                    <p>Some content</p>
+                    
+                   
+                </div>
+            </div>
+            )}
+            </div>
 
     </div>
     
