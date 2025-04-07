@@ -2,7 +2,7 @@ import './App.css';
 import {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-
+import {CollectionRecipes } from './collectionRecipes/collectionRecipes.js'
 function App() {
     const [isActive, setIsActive] = useState('home')
 
@@ -50,16 +50,26 @@ function App() {
             
             {/* <!-- Home Content --> */}
             {isActive === 'home' && (
+                <>
             <div className="thin-section">
-            <p>Simple recipes made for <span className="italic-text">real, actual, everyday life.</span> </p>
-        </div> )}
+            <div>
+                <p>Simple recipes made for <span className="italic-text">real, actual, everyday life.</span> </p>
+            </div> 
+            </div>
+            <div className="recipeVariety">
+            <CollectionRecipes/>
+            </div>
+            </>
+    
+    
+    
+    )}
+
 
             {isActive === 'recipes' && (
             <div className="content">
                 <div>
-                    <p>Something goes here</p>
-                    
-                   
+                    <p>Something recipes</p>
                 </div>
             </div>
             )}

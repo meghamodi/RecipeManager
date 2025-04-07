@@ -17,6 +17,12 @@
   cursor: pointer;
 }
 
+.recipeVariety{
+  display:grid;
+  align-items:center;
+  justify-content:normal;
+}
+
 .thin-section {
   display: flex;
   justify-content: center;
