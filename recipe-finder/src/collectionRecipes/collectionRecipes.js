@@ -1,3 +1,4 @@
+import './collectionRecipes.scss';
 export function CollectionRecipes(){
     const categories =[
        { name:"Healthy",image:"/assets/Cauliflower-Black-Bean-Tostadas-4.jpg"},

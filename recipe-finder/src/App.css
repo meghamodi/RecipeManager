@@ -10,6 +10,7 @@
 .headers {
   display: flex;
   /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); Flexible grid for headers */
+  flex-wrap:wrap;
   align-items:center;
   justify-content: space-between;
   width:100%;
@@ -18,9 +19,9 @@
 }
 
 .recipeVariety{
-  display:grid;
+  display:flex;
   align-items:center;
-  justify-content:normal;
+  justify-content:center;
 }
 
 .thin-section {
