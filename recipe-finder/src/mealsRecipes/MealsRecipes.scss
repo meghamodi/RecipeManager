@@ -1,0 +1,21 @@
+.mealTypes-container{
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:20px;
+    background-color:#f8f8f8;
+    
+
+
+}
+
+
+.mealsImage{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid #eee;
+}

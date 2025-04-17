@@ -1,4 +1,9 @@
 
+.App {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .container {
   display: flex;
   flex-direction: column; /* Stack sections vertically */
@@ -9,16 +14,19 @@
 
 .headers {
   display: flex;
-  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); Flexible grid for headers */
   flex-wrap:wrap;
   align-items:center;
   justify-content: space-between;
   width:100%;
   padding:10px 40px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .recipeVariety{
+  width: 100%;
+  margin:0;
+  padding:0;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -50,7 +58,11 @@
 
 .nav-menu{
   display:flex;
-  gap:30px;
+  flex-wrap:wrap;
+  justify-content: flex-end;
+  max-width: 100%;
+  gap:20px;
+
 }
 
 .content-grid {
@@ -65,19 +77,7 @@ justify-items: center;
 .category h3, .category svg {
   cursor:pointer;
   font-size:18px;
-  padding:5px 10px;
 }
 .category h3:hover, .category:hover svg {
   color:#9b5de5;
 }
-
-
-/* .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:center;
-  text-align: center;
- 
-  
-} */

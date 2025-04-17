@@ -2,7 +2,7 @@ import './App.css';
 import {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import {CollectionRecipes } from './collectionRecipes/collectionRecipes.js'
+import {HomeRecipes} from './HomeRecipes/HomeRecipes.js';
 function App() {
     const [isActive, setIsActive] = useState('home')
 
@@ -57,7 +57,9 @@ function App() {
             </div> 
             </div>
             <div className="recipeVariety">
-            <CollectionRecipes/>
+       
+            <HomeRecipes/>
+          
             </div>
             </>
     

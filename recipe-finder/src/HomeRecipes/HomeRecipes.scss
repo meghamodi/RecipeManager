@@ -1,0 +1,15 @@
+.home-recipes-container{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:20px;
+    background-color:#f8f8f8;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+
+}
+.home-recipes-container::-webkit-scrollbar {
+    display: none;
+}
