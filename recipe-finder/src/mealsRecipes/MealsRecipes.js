@@ -12,17 +12,23 @@ export function MealsRecipes(){
         { name: "Salads", image: "/assets/Kale-Apple-Salad.jpg" }
     ];
     return (
-        <div className="mealTypes-container">
+        <div className="mealTypes-scroll">
             {mealTypes.map((category,idx)=>(
+                <div className="mealTypes-container" key={idx}
+       
+                    style={{
+                    marginLeft: idx === 0 ? '40px' : '0',
+                    marginRight: idx === mealTypes.length - 1 ? '40px' : '0',
+                    }}
+                >
                 <div key={idx} className="roundRecipes">
                 <img className="mealsImage" src={category.image} alt={category.name} />
                 <p>{category.name}</p>
-                </div>
-
-            ))
-        }
+                </div>        
 
         </div>
+            ))}
+            </div>
     )
     
 }

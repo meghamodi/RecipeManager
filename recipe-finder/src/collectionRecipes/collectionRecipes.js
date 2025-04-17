@@ -11,7 +11,14 @@ export function CollectionRecipes(){
     return <div>
         <div className="homeRecipes">
             {categories.map((category,index)=>(
-                  <div key={index} className="recipe-card">
+                  <div
+                  key={index}
+                  className="recipe-card"
+                  style={{
+                    marginLeft: index === 0 ? '40px' : '0',
+                    marginRight: index === categories.length - 1 ? '40px' : '0',
+                  }}
+                >
                     <img className="image-recipe" src={category.image} alt={category.name}/>
                     <div className="recipe-label">
                     {category.name}

@@ -1,14 +1,31 @@
-.mealTypes-container{
-    display:flex;
-    flex-direction:row;
-    gap:20px;
-    overflow-x:auto;
-    overflow-y:hidden;
-    padding:20px;
-    background-color:#f8f8f8;
-    
+.mealTypes-scroll {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    width: 100vw;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    justify-content: center; 
+  }
 
 
+
+  .mealTypes-scroll > .meal-type:first-child {
+    margin-left: 40px;
+}
+.mealTypes-scroll > .meal-type:last-child {
+    margin-right: 40px;
+}
+
+.mealTypes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: start;
 }
 
 

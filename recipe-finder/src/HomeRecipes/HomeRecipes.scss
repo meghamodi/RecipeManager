@@ -1,13 +1,10 @@
 .home-recipes-container{
-    display:flex;
-    gap:20px;
-    overflow-x:auto;
-    overflow-y:hidden;
-    padding:20px;
-    background-color:#f8f8f8;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;  // ⬅️ stack vertically
+    gap: 40px;               // ⬅️ spacing between rows
+    background-color: #f8f8f8;
+    align-items:center;
 
 }
 .home-recipes-container::-webkit-scrollbar {
