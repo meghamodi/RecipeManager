@@ -62,11 +62,7 @@ function App() {
           
             </div>
             </>
-    
-    
-    
     )}
-
 
             {isActive === 'recipes' && (
             <div className="content">

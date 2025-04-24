@@ -1,0 +1,79 @@
+.searchBar-wrapper {
+    display:flex;
+    justify-content: center; 
+    padding: 32px 0;
+    background-color: #f8f8f8;
+}
+
+.searchBar-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0;
+    background-color: #f8f8f8;
+  }
+.search-form{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.search-icon{
+    position:absolute;
+    left:14px;
+    color:#aaa;
+    font-size:16px;
+
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 999px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 999px;
+  }
+  
+  .search-input-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    position: relative;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    color: #800080; // or #5d3b8c for that Pinch of Yum purple
+    font-size: 1rem;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px 12px 10px 36px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    outline: none;
+  }
+  
+  .or-text {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+  }
+  
+  .view-all-link {
+    font-weight: bold;
+    color: #800080;
+    text-decoration: none;
+    font-size: 0.95rem;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
