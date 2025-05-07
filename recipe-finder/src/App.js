@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-        <div className="container">
+        <div className="navbar">
             <div className="headers">
                 <div className="category">
                     <h3  onClick={() =>handleContent('homeText')}>Home</h3> 
@@ -42,7 +42,7 @@ function App() {
             {/* <!-- Home Content --> */}
             {isActive === 'homeText' && (
             <div  className="content">
-                <p>This is home</p> 
+                <p>Welcome to RecipeManager! Select a section to get started.</p> 
             </div> )}
 
 

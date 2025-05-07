@@ -1,25 +1,22 @@
-.container {
-  display: flex;
-  flex-direction: column; /* Stack sections vertically */
-  align-items: center; /* Center-align the content horizontally */
-  padding: 20px;
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 10px 0;
 }
 
 .headers {
   display: flex;
   /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); Flexible grid for headers */
-  gap: 20px;
+  gap: 40px;
   justify-items: center; 
+  justify-content:center;
+  align-items:center;
   cursor: pointer;
-}
-
-.content-grid {
-gap: 20px;
-justify-items: right; /* Center-align content */
-display: grid; /* Use grid instead of flex */
-width: 100%;
-gap: 20px;
-justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;  
 }
 
 .category {
@@ -27,13 +24,43 @@ justify-items: center;
   width: 100%;
 }
 
+.category h3 {
+  font-size:1.1rem;
+  padding:10px 20px;
+  cursor:pointer;
+  border-radius:8px;
+  transition:all 0.3 ease;
+
+}
+.category h3:hover {
+  background-color:#e0f7fa;
+  color:#00796b;
+}
+
+.category h3.active{
+  background-color:#00796b;
+  color:#ffff;
+}
+
+
+.content-grid {
+  display: grid; /* Use grid instead of flex */
+  width: 100%;
+  padding: 30px 20px;
+  justify-items: center;
+  }
 
 .content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:center;
+
+  flex-direction: column;        /* ✅ Ensure vertical stacking */
+  align-items: center;           /* ✅ Center children horizontally */
+  justify-content: center;
   text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;                /* ✅ Center the whole content block */
+  padding: 20px; 
  
   
 }
+

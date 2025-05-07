@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import './RandomRecipe.scss';
+
 export default function RandomRecipes(){
     const [recipes,setRecipes] = useState(null)
 
@@ -38,14 +39,16 @@ export default function RandomRecipes(){
     }
     
     return (
-        <div>
+        <div className="random-recipe-container">
             <button onClick={showOneRecipe}>Click for random recipes</button>
-            <div className="recipeCard">
+           
             {recipes && (
-                <div className="recipeItem">
+                <div className="recipeCard">
+                    <div className="recipeItem">
                 <div className="recipeName">{recipes.title}</div>
                     <p>Ingredients:{recipes.ingredients}</p>
                     <p>Instructions: {recipes.instructions}</p>
+                </div>
                 </div>
             )
            
@@ -53,8 +56,6 @@ export default function RandomRecipes(){
          </div>
      
         
-
-        </div>
        
     )
 }
