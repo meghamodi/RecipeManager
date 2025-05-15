@@ -8,6 +8,7 @@
   Easily search recipes by name or filter based on protein, carbs, calories, fat, or fiber.
 
 - **AI Assistant**  
+  ![AI](assets/ai_assistant.png)
   Ask ChatGPT to generate recipes on the fly with queries like "Show vegan zucchini recipe".
 
 - **Random Recipe Generator**  
