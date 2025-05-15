@@ -8,13 +8,18 @@
   Easily search recipes by name or filter based on protein, carbs, calories, fat, or fiber.
 
 - **AI Assistant**  
-  ![AI](assets/ai_assistant.png)
+  <img src="recipe-finder/assets/ai_assistant.png" alt="AI Assistant" width="400"/>
+
   Ask ChatGPT to generate recipes on the fly with queries like "Show vegan zucchini recipe".
 
-- **Random Recipe Generator**  
+- **Random Recipe Generator**
+<img src="recipe-finder/assets/recipe_generator.png" alt="Random Recipes" width="400"/>
+  
   Click a button to explore a surprise recipe.
 
 - **Nutritional Info at a Glance**  
+<img src="recipe-finder/assets/recipes_list.png" alt="Recipe" width="400"/>
+ 
   View macros (protein, carbs, calories, fat, fiber) for each recipe card.
 
 - **Responsive UI**  
