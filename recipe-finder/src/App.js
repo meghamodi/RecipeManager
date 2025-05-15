@@ -2,6 +2,7 @@ import './App.css';
 import { SearchRecipe } from './RecipeCard/searchRecipe.js';
 import RandomRecipes from './RandomRecipe/RandomRecipes.js'
 import {useState} from 'react';
+import ChatBox from './ChatBox/ChatBox.js'
 
 function App() {
     const [isActive, setIsActive] = useState('homeText')
@@ -31,6 +32,10 @@ function App() {
             </div>
             <div className="category">
                 <h3 onClick={()=> handleContent('AboutMe')}>About</h3>
+      
+            </div>
+            <div className="category">
+                <h3 onClick={()=> handleContent('chatAssistant')}>AI Assistant</h3>
       
             </div>
 
@@ -80,6 +85,12 @@ function App() {
             {isActive === 'AboutMe' && (
             <div className="content">
                 <p>This is the "About" section where you can add information about yourself or your website.</p>
+            </div>
+            )}
+            {/* <!-- Random Content --> */}
+            {isActive === 'chatAssistant' && (
+            <div className="content">
+                <ChatBox/>
             </div>
             )}
 
